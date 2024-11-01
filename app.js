@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 
-const dbUri = 'mongodb+srv://onapte:12345@cluster0.rioxj.mongodb.net/expenai_main'
+const dbUri = '<dbUri>'
 mongoose.connect(dbUri)
 .then((result) => app.listen(3000))
 .catch((err) => console.log(err));
