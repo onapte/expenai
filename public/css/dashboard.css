@@ -1,0 +1,225 @@
+.container {
+    margin-top: 85px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#view-table-button {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.summary-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px; /* Maximum width of the container */
+    margin: auto; /* Centering the container */
+}
+
+.box {
+    flex: 1; /* Each box takes equal space */
+    margin: 0 10px; /* Space between boxes */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack label and amount */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.label {
+    color: #888; /* Gray color for the label */
+    font-size: 14px; /* Font size for the label */
+    margin-bottom: 10px; /* Space between label and amount */
+}
+
+.amount {
+    font-size: 24px; /* Font size for the amount */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+.vis {
+    display: flex;
+    max-width: 1180px; /* Maximum width to match the summary box */
+    margin: auto; /* Centering the container */
+    justify-content: center; /* Center the left box */
+}
+
+.left-box {
+    width: calc(100% - 20px); /* Adjust width to fill the available space, accounting for padding */
+    background-color: #f5f5f5; /* Same minimalist background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bar-chart {
+    width: 100%; /* Full width of the chart */
+    margin: 20px 0; /* Margin around the chart */
+}
+
+.bar {
+    position: relative;
+    background-color: #f0f0f0; /* Lighter background for a more refined look */
+    border-radius: 8px; /* Slightly more rounded corners */
+    height: 30px; /* Height of each bar */
+    margin: 10px 0; /* Space between bars */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure filled part does not overflow */
+}
+
+.bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--percentage); /* Fill based on the percentage */
+    background-color: #007bff; /* Elegant blue fill */
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left side only */
+    transition: width 0.4s ease; /* Smooth transition for fill */
+}
+
+.bar-label {
+    position: absolute;
+    left: 15px; /* Adjusted for better positioning */
+    color: #333; /* Darker text for contrast */
+    font-weight: 600; /* Semi-bold text */
+    line-height: 30px; /* Center label vertically */
+    z-index: 1; /* Ensure label appears above the filled bar */
+}
+
+
+
+.info {
+    margin-top: 10px;
+    text-align: center;
+    color: #888; /* Gray text color */
+}
+
+.right-box {
+    flex: 1; /* Larger box */
+    background-color: #f5f5f5; /* Same minimalist background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    max-width: 1145px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding-bottom: 20px;
+}
+
+table {
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Merge table borders */
+}
+
+th, td {
+    padding: 10px; /* Cell padding */
+    text-align: left; /* Left-aligned text */
+    border-bottom: 1px solid #ddd; /* Light bottom border */
+}
+
+th {
+    background-color: #f0f0f0; /* Header background color */
+}
+
+#viz-area {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between the divs */
+    max-width: 1200px; /* Limit maximum width to match other elements */
+    margin: 20px auto; /* Center the area with some vertical spacing */
+    padding: 20px; /* Add padding for a cleaner look */
+}
+
+#viz-area1 {
+    flex: 1; /* Take equal space */
+    margin-right: 20px; /* Space between the two divs */
+    background-color: white; /* Same minimalist background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#viz-area2 {
+    flex: 1; /* Take equal space */
+    background-color: white; /* Same minimalist background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#viz-area2 img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+#viz-area1 img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+.dashboard-title {
+    text-align: center; /* Center the text */
+    font-weight: bold;  /* Make the text bold */
+    font-size: 24px;    /* Adjust font size as needed */
+    margin: 20px 0;     /* Add some space above and below */
+    color: #333;        /* Set a professional text color */
+}
+
+@media (max-width: 768px) {
+    .vis {
+        flex-direction: column; /* Stack boxes on smaller screens */
+    }
+    .left-box {
+        max-width: none; /* Remove max width for small screens */
+    }
+    .right-box {
+        margin-left: 0; /* Remove margin for stacked boxes */
+    }
+
+    #viz-area {
+        flex-direction: column; /* Stack the divs vertically on smaller screens */
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    #viz-area1 {
+        margin-right: 0; /* Remove margin on the right */
+        margin-bottom: 20px; /* Space below the first div */
+    }
+
+    #viz-area2 {
+        margin-left: 0; /* Remove left margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .summary-box {
+        flex-direction: column; /* Stack boxes on smaller screens */
+    }
+    .box {
+        margin: 10px 0; /* Vertical margin for stacked boxes */
+    }
+}

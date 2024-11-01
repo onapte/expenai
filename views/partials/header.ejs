@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="css/header.css">
+<nav>
+    <div class="navbar">
+      <div class="logo"><a href="/">ExpenAI</a></div>
+      <ul class="menu">
+        <% if (locals.user == null) { %>
+          <li><a href="/login">Login</a></li>
+        <% } else { %>
+          <li><a href="/logout">Logout</a></li>
+        <% } %>
+        <li><a href="#Feedback">Github</a></li>
+      </ul>
+    </div>
+</nav>

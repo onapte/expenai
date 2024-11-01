@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <%- include('./partials/header') %>
+
+    <section class="container">
+        <div class="dashboard-title">Welcome!</div>
+    <p>
+        
+    </p>
+    <div class="summary-box">
+        <div class="box" style="background-color: #E0F2F1;">
+            <div class="label">Last Purchase</div>
+            <div class="amount">$<%= lastPurchase %></div>
+        </div>
+        <div class="box" style="background-color: #F3E5F5;">
+            <div class="label">Last Month Purchase</div>
+            <div class="amount">$<%= lastMonthPurchase %></div>
+        </div>
+        <div class="box" style="background-color: #FFF3E0;">
+            <div class="label">Total Expenses</div>
+            <div class="amount">$<%= totalPurchasedAmount %></div>
+        </div>
+    </div>
+
+    <div class="vis">
+        <!-- <div class="left-box">
+            <div class="bar-chart">
+                <div class="bar" style="--percentage: 70%;">
+                    <span class="bar-label">Category A</span>
+                </div>
+                <div class="bar" style="--percentage: 50%;">
+                    <span class="bar-label">Category B</span>
+                </div>
+                <div class="bar" style="--percentage: 90%;">
+                    <span class="bar-label">Category C</span>
+                </div>
+                <div class="bar" style="--percentage: 40%;">
+                    <span class="bar-label">Category D</span>
+                </div>
+            </div>
+        </div> -->
+        <div class="right-box">
+            <% 
+            const formatDate = (dateString) => {
+                const date = new Date(dateString);
+                
+                const day = String(date.getDate()).padStart(2, '0'); // Get day and pad if necessary
+                const month = date.toLocaleString('default', { month: 'short' }); // Get short month name
+                const year = String(date.getFullYear()).slice(-2); // Get last two digits of the year
+                const hour = date.getHours() % 12 || 12; // Convert to 12-hour format
+                const minute = String(date.getMinutes()).padStart(2, '0'); // Get minutes and pad if necessary
+                const ampm = date.getHours() < 12 ? 'am' : 'pm'; // Determine AM/PM
+        
+                return `${day} ${month}. ${year}, ${hour}:${minute} ${ampm}`; // Format the final string
+            };
+%>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Store Name</th>
+                        <th>Store Location</th>
+                        <th>Date</th>
+                        <th>Expenses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (res.locals.receipts && res.locals.receipts.length > 0) { %>
+                        <% res.locals.receipts.forEach(receipt => { %>
+                            <tr>
+                                <td><%= receipt.storeName %></td>
+                                <td><%= receipt.storeLocation %></td>
+                                <td><%= formatDate(receipt.date) %></td> <!-- Assuming expenseDetails is an array -->
+                                <td>
+                                    <% if (receipt.expenseDetails && receipt.expenseDetails.length > 0) { %>
+                                        <% 
+                                            const total = receipt.expenseDetails.reduce((total, expense) => {
+                                                return total + (expense.price * expense.quantity);
+                                            }, 0).toFixed(3); 
+                                        %>
+                                        $<%= total %>
+                                    <% } else { %>
+                                        0
+                                    <% } %>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="4" style="text-align: center;">No receipts found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <div id="view-table-button">
+                <a href="/add-expenses" class="button-link">Add expenses</a>
+            </div>
+        </div>
+    </div>
+    <div id="viz-area">
+        <div id="viz-area1"><img src="<%- img2 %>"></div>
+        <div id="viz-area2"><img src="<%- img1 %>"></div>
+    </div>
+    </section>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "expenai",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Onkar",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chart.js": "^3.9.1",
+    "chartjs-node-canvas": "^4.1.6",
+    "cookie-parser": "^1.4.6",
+    "d3": "^7.9.0",
+    "d3-node": "^4.0.1",
+    "d3node-linechart": "^0.1.2",
+    "d3node-output": "^1.0.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsdom": "^25.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mindee": "^4.14.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.6.1",
+    "validator": "^13.12.0"
+  }
+}
