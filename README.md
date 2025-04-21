@@ -1,5 +1,5 @@
-To be updated soon...  
-More features incoming (multi-language support, quick visualizations...)
+- This is ExpenAI v1.
+- ExpenAI v2 is accessible [here](https://github.com/onapte/expenai/tree/main).
   
 ![alt text](image.png)
   
