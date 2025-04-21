@@ -37,12 +37,10 @@ const dbUri =
   "mongodb+srv://onapte:Mongo12345@cluster0.rioxj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(dbUri).then(() => {
-  app.listen(3001, () => {
+  app.listen(3001, '0.0.0.0', () => {
     console.log("Express server running on http://localhost:3001");
   });
 });
-
-app.get("*", checkUser);
 
 app.get("/api/dashboard", requireAuth, async (req, res) => {
   try {
@@ -111,3 +109,5 @@ if (process.env.NODE_ENV == "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+app.get("*", checkUser);
