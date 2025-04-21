@@ -50,7 +50,7 @@ cd ..
 npm install
 ```
 
-# 3. Create a .env file in the root:
+### 3. Create a .env file in the root:
 ```ini
 MONGO_URI=your_mongo_connection
 JWT_SECRET=your_jwt_secret
@@ -59,7 +59,7 @@ GCS_BUCKET=your_bucket_name
 GCS_KEY_PATH=./secrets/gcs_key.json
 ```
 
-# 5. Start the app (locally)
+### 4. Start the app (locally)
 ```bash
 node app.js
 ```
