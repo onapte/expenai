@@ -2,6 +2,10 @@
 
 ExpenAI is a full-stack expense tracker that helps users log and visualize their purchases. You can either enter item details manually or upload a receipt and let AI extract the information automatically.
 
+## Architecture
+
+![alt text](expenai-architecture.drawio.png)
+
 ## Features
 
 - Login/signup functionality
